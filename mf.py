@@ -2,6 +2,7 @@ from mechanize import Browser
 from bs4 import BeautifulSoup
 from urllib import parse
 import json
+import datetime
 
 data = {}
 hiddens = {}
@@ -114,7 +115,7 @@ def dump_div_data():
                     data[amc.text][scheme.text].append(row_data)
 
                 iter += 1
-    with open('mf_div_data.json', 'w') as fp:
+    with open(f'mf_div_data_{datetime.datetime.now()}.json', 'w') as fp:
         json.dump(data, fp)
 
 
