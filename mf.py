@@ -115,7 +115,7 @@ def dump_div_data():
                     data[amc.text][scheme.text].append(row_data)
 
                 iter += 1
-    with open(f'mf_div_data_{datetime.datetime.now()}.json', 'w') as fp:
+    with open(f'mf_div_data_{datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")}.json', 'w') as fp:
         json.dump(data, fp)
 
 
